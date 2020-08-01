@@ -2,8 +2,8 @@ import React from 'react';
 import './Loader.css';
 
 const Loader = () => (
-    <div className="text-center">
-        <div className="lds-dual-ring"></div>
+    <div className="spinner-border text-primary" role="status">
+        <span className="sr-only">Loading...</span>
     </div>
 );
 
