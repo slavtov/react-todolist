@@ -4,18 +4,18 @@ import {
     FETCH_TODOS_FAILURE,
     ADD_TODO,
     EDIT_TODO,
-    COMPLETE_TODO,
+    TOGGLE_TODO,
     DELETE_TODO,
     CLEAR_ALL
 } from '../actions/todos';
 
 const initialState = {
     isLoaded: false,
-    items: [],
-    error: null
+    error: null,
+    items: []
 }
 
-const reducer = (state = initialState, action) => {
+const todosReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_TODOS_REQUEST:
             return {
@@ -37,12 +37,21 @@ const reducer = (state = initialState, action) => {
         case ADD_TODO:
             return {
                 ...state,
-                items: [...state.items, action.payload]
+                items: [
+                    ...state.items, 
+                    action.payload
+                ]
             }
         case EDIT_TODO:
-            state.items.find(item => item.id === action.payload.id).title = action.payload.title;
-
-            return state;
+            return {
+                ...state,
+                items: state.items.map(item => item.id === action.payload.id ? { ...item, title: action.payload.title } : item)
+            }
+        case TOGGLE_TODO:
+            return {
+                ...state,
+                items: state.items.map(item => item.id === action.payload ? { ...item, completed: !item.completed } : item)
+            }
         case DELETE_TODO:
             return {
                 ...state,
@@ -53,13 +62,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 items: []
             }
-        case COMPLETE_TODO:
-            const item = state.items.find(item => item.id === action.payload);
-            item.completed = !item.completed;
-
+        default:
             return state;
-        default: return state;
     }
 }
 
-export default reducer;
+export default todosReducer;

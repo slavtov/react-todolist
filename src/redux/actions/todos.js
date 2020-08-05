@@ -4,7 +4,7 @@ export const FETCH_TODOS_FAILURE = 'FETCH_TODOS_FAILURE';
 
 export const ADD_TODO = 'ADD_TODO';
 export const EDIT_TODO = 'EDIT_TODO';
-export const COMPLETE_TODO = 'COMPLETE_TODO';
+export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 export const CLEAR_ALL = 'CLEAR_ALL';
 
@@ -32,6 +32,11 @@ export const editTodo = title => ({
     payload: title
 });
 
+export const toggleTodo = id => ({
+    type: TOGGLE_TODO,
+    payload: id
+});
+
 export const deleteTodo = id => ({
     type: DELETE_TODO,
     payload: id
@@ -39,11 +44,6 @@ export const deleteTodo = id => ({
 
 export const clearAll = () => ({
     type: CLEAR_ALL
-});
-
-export const completeTodo = id => ({
-    type: COMPLETE_TODO,
-    payload: id
 });
 
 export const fetchTodos = () => dispatch => {
