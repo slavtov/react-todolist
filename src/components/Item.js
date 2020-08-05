@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { deleteTodo, editTodo, changeCompleted } from '../redux/actions/todos';
+import { deleteTodo, editTodo, completeTodo } from '../redux/actions/todos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +16,7 @@ const Item = props => {
     const dispatch = useDispatch();
 
     const handleEditorChange = event => setEditorInput(event.target.value);
-    const handleCheckboxChange = () => dispatch(changeCompleted(props.item.id));
+    const handleCheckboxChange = () => dispatch(completeTodo(props.item.id));
     const handleClick = () => {
         if (isEditing && editorInput.trim()) 
             dispatch(editTodo({

@@ -4,10 +4,9 @@ export const FETCH_TODOS_FAILURE = 'FETCH_TODOS_FAILURE';
 
 export const ADD_TODO = 'ADD_TODO';
 export const EDIT_TODO = 'EDIT_TODO';
+export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 export const CLEAR_ALL = 'CLEAR_ALL';
-
-export const CHANGE_COMPLETED = 'CHANGE_COMPLETED';
 
 export const fetchTodosRequest = () => ({
     type: FETCH_TODOS_REQUEST
@@ -42,8 +41,8 @@ export const clearAll = () => ({
     type: CLEAR_ALL
 });
 
-export const changeCompleted = id => ({
-    type: CHANGE_COMPLETED,
+export const completeTodo = id => ({
+    type: COMPLETE_TODO,
     payload: id
 });
 

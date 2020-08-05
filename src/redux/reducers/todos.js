@@ -4,9 +4,9 @@ import {
     FETCH_TODOS_FAILURE,
     ADD_TODO,
     EDIT_TODO,
+    COMPLETE_TODO,
     DELETE_TODO,
-    CLEAR_ALL,
-    CHANGE_COMPLETED
+    CLEAR_ALL
 } from '../actions/todos';
 
 const initialState = {
@@ -42,9 +42,7 @@ const reducer = (state = initialState, action) => {
         case EDIT_TODO:
             state.items.find(item => item.id === action.payload.id).title = action.payload.title;
 
-            return {
-                ...state
-            }
+            return state;
         case DELETE_TODO:
             return {
                 ...state,
@@ -55,13 +53,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 items: []
             }
-        case CHANGE_COMPLETED:
+        case COMPLETE_TODO:
             const item = state.items.find(item => item.id === action.payload);
             item.completed = !item.completed;
 
-            return {
-                ...state
-            }
+            return state;
         default: return state;
     }
 }
