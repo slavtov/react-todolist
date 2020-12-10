@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = props => (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,6 +37,6 @@ const Navbar = props => (
             </div>
         </div>
     </nav>
-);
+)
 
-export default Navbar;
+export default Navbar

@@ -7,7 +7,7 @@ import {
     TOGGLE_TODO,
     DELETE_TODO,
     CLEAR_ALL
-} from '../actions/todos';
+} from '../actions/todos'
 
 const initialState = {
     isLoaded: false,
@@ -63,8 +63,8 @@ const todosReducer = (state = initialState, action) => {
                 items: []
             }
         default:
-            return state;
+            return state
     }
 }
 
-export default todosReducer;
+export default todosReducer

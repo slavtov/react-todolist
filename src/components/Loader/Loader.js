@@ -1,5 +1,5 @@
-import React from 'react';
-import './Loader.css';
+import React from 'react'
+import './Loader.css'
 
 const Loader = () => (
     <div className="text-center">
@@ -7,6 +7,6 @@ const Loader = () => (
             <span className="sr-only">Loading...</span>
         </div>
     </div>
-);
+)
 
-export default Loader;
+export default Loader

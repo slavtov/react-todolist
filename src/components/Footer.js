@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Footer = () => (
     <footer className="bg-light py-3">
@@ -6,6 +6,6 @@ const Footer = () => (
             <span className="text-muted">Footer content</span>
         </div>
     </footer>
-);
+)
 
-export default Footer;
+export default Footer

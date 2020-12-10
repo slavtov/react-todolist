@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-import Add from '../components/Add';
-import Items from '../components/Items';
-import { clearAll } from '../redux/actions/todos';
+import Add from '../components/Add'
+import Items from '../components/Items'
+import { clearAll } from '../redux/actions/todos'
 
 const Todos = () => {
-    const [filter, setFilter] = useState(null);
-    const dispatch = useDispatch();
+    const [filter, setFilter] = useState(null)
+    const dispatch = useDispatch()
 
-    const handleClick = () => dispatch(clearAll());
-    const handleChange = event => setFilter(event.target.value);
+    const handleClick = () => dispatch(clearAll())
+    const handleChange = event => setFilter(event.target.value)
 
     return (
         <div>
@@ -29,7 +29,7 @@ const Todos = () => {
             <hr />
             <Items filter={filter} />
         </div>
-    );
+    )
 }
 
-export default Todos;
+export default Todos

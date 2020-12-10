@@ -1,21 +1,20 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
-import 'bootstrap';
+} from 'react-router-dom'
+import 'bootstrap'
 
-import Home from './pages/Home';
-import Todos from './pages/Todos';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Home from './pages/Home'
+import Todos from './pages/Todos'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import logo from './logo.svg'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-function App() {
+const App = () => {
   return (
     <Router>
       <Navbar logo={logo} />
@@ -28,7 +27,7 @@ function App() {
       </div>
       <Footer />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
