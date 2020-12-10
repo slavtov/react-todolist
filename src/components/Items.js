@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import Item from '../components/Item'
 import Loader from '../components/Loader/Loader'
 import { fetchTodos } from '../redux/actions/todos'
 
-const Items = props => {
+const Items = ({ filter }) => {
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
 
@@ -20,9 +21,9 @@ const Items = props => {
     } else {
         let items = todos.items.sort((a, b) => b.completed - a.completed)
 
-        if (props.filter === 'completed') 
+        if (filter === 'completed') 
             items = todos.items.filter(item => item.completed)
-        else if (props.filter === 'not-completed') 
+        else if (filter === 'not-completed') 
             items = todos.items.filter(item => !item.completed)
 
         const content = items.map(todo => <Item key={todo.id} item={todo} />).reverse()
@@ -31,3 +32,7 @@ const Items = props => {
 }
 
 export default Items
+
+Items.propTypes = {
+    filter: PropTypes.string
+}

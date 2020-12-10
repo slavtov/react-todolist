@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, NavLink } from 'react-router-dom'
 
-const Navbar = props => (
+const Navbar = ({ logo }) => (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
             <Link to="/" className="navbar-brand">
                 <img 
-                    src={props.logo} 
+                    src={logo} 
                     width="30" 
                     height="30" 
                     className="d-inline-block align-top" 
@@ -40,3 +41,7 @@ const Navbar = props => (
 )
 
 export default Navbar
+
+Navbar.propTypes = {
+    logo: PropTypes.string
+}
