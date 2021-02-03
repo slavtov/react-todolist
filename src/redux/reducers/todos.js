@@ -20,17 +20,17 @@ const todosReducer = (state = initialState, action) => {
         case FETCH_TODOS_REQUEST:
             return {
                 ...state,
-                isLoaded: true
+                isLoaded: false
             }
         case FETCH_TODOS_SUCCESS:
             return {
-                isLoaded: false,
+                isLoaded: true,
                 items: action.payload,
                 error: null
             }
         case FETCH_TODOS_FAILURE:
             return {
-                isLoaded: false,
+                isLoaded: true,
                 items: [],
                 error: action.payload
             }

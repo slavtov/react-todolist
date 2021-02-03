@@ -16,7 +16,7 @@ const Items = ({ filter }) => {
 
     if (todos.error) {
         return <div>Error: {todos.error.message}</div>
-    } else if (todos.isLoaded) {
+    } else if (!todos.isLoaded) {
         return <Loader />
     } else {
         let items = todos.items.sort((a, b) => b.completed - a.completed)
